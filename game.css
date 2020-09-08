@@ -1,0 +1,79 @@
+@media only screen and (max-width:768px){
+    body{
+        padding: 0;
+        margin: 0;
+        background: url(yousef-espanioly-8ja-Ns8iqO4-unsplash.jpg);
+        background-repeat:repeat;
+        background-size: cover;
+        background-position: fixed;;
+    }
+    .main{
+        width: 100%;
+        height: 50px;
+        color: white;
+        line-height: 40px;
+        margin-top: 0%;
+        font-size: 25px;
+        outline: none;
+        border-style: none;
+        text-align: center;
+        background-image: linear-gradient(to right, #eb5a45 , #ed5d44,#f1683f,#f46e3c,#f67538,#f97d35);
+    }
+    .box{
+        width: 100%;
+        height: 347px;
+        margin-top: 12%;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .box2{
+        width: 100%;
+        height: 305px;
+        padding-top:8%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding-bottom:7%;
+        z-index: -1;
+        background-color: white;
+    }
+    .box3{
+        width: 100%;
+        line-height: 42px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        line-height: 42px;
+        text-align: center;
+        font-weight: bold;
+        border-top: 1px solid #eb5a45;
+        background-color: white;
+    }
+    #header_style{
+        color: orangered;
+        font-family: font2;
+        font-weight: bold;
+        padding-left: 25px;
+        float: left;
+    }
+    #header_style1{
+        font-family: font2;
+        background-color:skyblue;
+        color: black;
+        font-weight: bold;
+    }
+    #login{
+        color: white;
+    }
+    .div1{
+             margin-left: 50%;
+                margin-right: -200px;
+                    margin-top: 32%;
+          font-family: font2;
+                    margin-bottom: 30%;
+                }
+    #div8{
+         box-shadow: 1px 2px 8px 4px #888888;
+    }
+    #turn{
+        margin-top: auto;
+    }
+}

@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Tic Tac Toe game </title>-
+        <link href="game.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width:768px)">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Login to Infinity Study and access more contents of this website..">
+        <meta name="author" content="Navin Shahi">
+    </head>
+    <body style="font-family:'Open Sans',Helvetica,Arial,sans-serif;background-color:#f5f5f5;">
+        <button type="button" class="main">
+           Tic Tac Toe
+        </button>
+        <audio id="vxyz" src="You-lose-sound-effect.mp3" preload="auto"></audio>
+        <audio id="xyz" src="Short_triumphal_fanfare-John_Stracke-815794903.mp3" preload="auto"></audio>
+        <div class="box">
+            <div class="box2">
+                <table style="width:100%;height:300px;">
+                    <tr>
+                        <td><button id="tik1" style="width:100%;height:100%;font-size:50px;" onclick="tik1()"></button></td><td><button id="tik2" style="width:100%;height:100%;font-size:50px;" onclick="tik2()"></button></td><td><button id="tik3" style="width:100%;height:100%;font-size:50px;" onclick="tik3()"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="tik4" style="width:100%;height:100%;font-size:50px;" onclick="tik4()"></button></td><td><button id="tik5" style="width:100%;height:100%;font-size:50px;" onclick="tik5()"></button></td><td><button id="tik6" style="width:100%;height:100%;font-size:50px;" onclick="tik6()"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="tik7" style="width:100%;height:100%;font-size:50px;" onclick="tik7()"></button></td><td><button id="tik8" style="width:100%;height:100%;font-size:50px;" onclick="tik8()"></button></td><td><button id="tik9" style="width:100%;height:100%;font-size:50px;" onclick="tik9()"></button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="box3"><p id="turn" style="color:red;font-weight:bold;">Welcome to TIC-TAC-TOE Game!!</p></div>
+          </div>
+          <script type="text/javascript">
+            var v=['O','X','O','X','O','X','O','X','O','X','O'];
+            var w=[555,666,555,666,555,666,555,666,555];
+            var m=[];
+            var j=0;
+            var c=0;
+            var b=prompt("Player 1: Enter your name: ");
+              var z=prompt("Player 2: Enter your name: ");
+              if(b==null)
+              {
+                  b="Player 1";
+              }
+              if(z==null)
+              {
+                  z="Player 2";
+              }
+                 document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+v[c];
+            for(i=0;i<9;i++)
+                {
+                    m[i]=i;
+                }
+            var p=0;
+            function tik1(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik1');
+                x.innerHTML=v[c];
+                m[0]=w[p];
+                c++;
+                p++;
+                j++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                        document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                        document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik2(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik2');
+                x.innerHTML=v[c];
+                m[1]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                      var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik3(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik3');
+                x.innerHTML=v[c];
+                m[2]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                        if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik4(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik4');
+                x.innerHTML=v[c];
+                m[3]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik5(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik5');
+                x.innerHTML=v[c];
+                m[4]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik6(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik6');
+                x.innerHTML=v[c];
+                m[5]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    { 
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik7(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik7');
+                x.innerHTML=v[c];
+                m[6]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik8(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik8');
+                x.innerHTML=v[c];
+                m[7]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                        if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                       var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+            function tik9(){
+                new Audio("Mouse_Click_4-fesliyanstudios.com.mp3").play();
+                var x=document.getElementById('tik9');
+                x.innerHTML=v[c];
+                m[8]=w[p];
+                c++;
+                j++;
+                p++;
+                if(j%2==0){
+                    document.getElementById('turn').innerHTML=b.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                else{
+                    document.getElementById('turn').innerHTML=z.toUpperCase()+" It's Your Turn!! | "+v[c];
+                }
+                if((m[0]==m[1] && m[1]==m[2])||(m[0]==m[3] && m[3]==m[6])||(m[2]==m[5] && m[5]==m[8])||(m[6]==m[7] && m[7]==m[8])||(m[0]==m[4] && m[4]==m[8])||(m[2]==m[4] && m[4]==m[6])||(m[1]==m[4] && m[4]==m[7])||(m[3]==m[4] && m[4]==m[5]))
+                    {
+                        document.getElementById('xyz').play();
+                       if(j%2==0){
+                          alert("Congratulations "+z.toUpperCase()+" !!! You won the game ");
+                      }
+                        else{
+                            alert("Congratulations "+b.toUpperCase()+" !!! You won the game ");
+                        }
+                         document.getElementById('xyz').pause();
+                        var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+                else if(j==9)
+                    {
+                         document.getElementById('vxyz').play();
+                       alert("The Match is draw!! Play again..");
+                        document.getElementById('vxyz').pause();
+                      var r=confirm("Do you want to play again with same names??");
+                        if(r==true){
+                            document.getElementById('tik1').innerHTML='*';
+                            document.getElementById('tik2').innerHTML='*';
+                            document.getElementById('tik3').innerHTML='*';
+                            document.getElementById('tik4').innerHTML='*';
+                            document.getElementById('tik5').innerHTML='*';
+                            document.getElementById('tik6').innerHTML='*';
+                            document.getElementById('tik7').innerHTML='*';
+                            document.getElementById('tik8').innerHTML='*';
+                            document.getElementById('tik9').innerHTML='*';
+                        document.getElementById('turn').innerHTML=b.toUpperCase()+" , It's Your Turn | "+'X';
+                            p=0;
+                            j=0;
+                            c=1;
+                            for(i=0;i<9;i++)
+                            {
+                              m[i]=i;
+                            }
+                        }
+                        else{
+                        window.location.href="game.html";
+                        }
+                    }
+            }
+        </script>
+    </body>
+</html>
