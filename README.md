@@ -2,4 +2,8 @@
 <h2>Introduction</h2>
 This is TIC TAC TOE game made using HTML,CSS &amp; JS for Mobile web..
 <h2>Screenshots</h2>
-<img src="Untitled1.jpg" width="200px" height="500px">
+<img src="Untitled1.jpg" width="400px" height="580px">
+<img src="Untitled1.jpg" width="400px" height="580px">
+<img src="Untitled1.jpg" width="400px" height="580px">
+<img src="Untitled1.jpg" width="400px" height="580px">
+<img src="Untitled1.jpg" width="400px" height="580px">
